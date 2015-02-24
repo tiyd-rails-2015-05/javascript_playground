@@ -17,17 +17,15 @@
 //alert("I HAVE YOU NOW!");
 
 function defaultName() {
-  var nameField = document.getElementById("name_field");
-  nameField.value = "Emperor Goatimus";
+  $("#name_field").val("Emperor Goatimus");
 }
 
 function displaySection(displayType) {
-  var section = document.getElementById("show_hide_section");
-  section.style.display = displayType;
+  $("#show_hide_section").css("display", displayType);
 }
 
 function copySection() {
-  var section = document.getElementById("copy_section");
-  var copy = section.lastElementChild.cloneNode(true);
-  section.appendChild(copy);
+  var section = $("#copy_section");
+  var copy = section.children().last().clone();
+  section.append(copy);
 }
