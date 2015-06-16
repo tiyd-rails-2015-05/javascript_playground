@@ -14,18 +14,25 @@
 //= require jquery_ujs
 //= require_tree .
 
-//alert("I HAVE YOU NOW!");
+surveys[questions_attributes][1][text]
 
 function defaultName() {
-  $("#name_field").val("Emperor Goatimus");
+  var field = document.getElementById("name_field");
+  field.value = "Defaaaaauuuu";
 }
 
-function displaySection(displayType) {
-  $("#show_hide_section").css("display", displayType);
+function toggleSection() {
+  var section = document.getElementById("show_hide_section");
+  if(section.style.display === "block") {
+    section.style.display = "none";
+  } else {
+    section.style.display = "block";
+  }
 }
 
 function copySection() {
-  var section = $("#copy_section");
-  var copy = section.children().last().clone();
-  section.append(copy);
+  var section = document.getElementById("copy_section");
+  var last = section.lastElementChild;
+  var copy = last.cloneNode(true);
+  section.appendChild(copy);
 }

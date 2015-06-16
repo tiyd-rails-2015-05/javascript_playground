@@ -10,8 +10,7 @@
 <div>
   <h3>Regarding the hidden section</h3>
   Show Next Section?
-  <%= radio_button_tag :show, true, nil, onclick: "displaySection('block');" %> Yes
-  <%= radio_button_tag :show, false, nil, onclick: "displaySection('none');" %> No
+  <%= check_box_tag :show, "yes", false, onclick: "toggleSection();" %> Yes
 </div>
 
 <div id="show_hide_section">
