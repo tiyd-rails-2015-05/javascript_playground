@@ -14,25 +14,20 @@
 //= require jquery_ujs
 //= require_tree .
 
-surveys[questions_attributes][1][text]
-
 function defaultName() {
-  var field = document.getElementById("name_field");
-  field.value = "Defaaaaauuuu";
+  $("#name_field").val("Defaaaaauuuu").css("font-size", "200px");
 }
 
 function toggleSection() {
-  var section = document.getElementById("show_hide_section");
-  if(section.style.display === "block") {
-    section.style.display = "none";
+  var section = $("#show_hide_section");
+  if($("#show_checkbox").is(':checked')) {
+    section.show();
   } else {
-    section.style.display = "block";
+    section.hide();
   }
 }
 
 function copySection() {
-  var section = document.getElementById("copy_section");
-  var last = section.lastElementChild;
-  var copy = last.cloneNode(true);
-  section.appendChild(copy);
+  var section = $("#copy_section");
+  section.append(section.children().last().clone());
 }
